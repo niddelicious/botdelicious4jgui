@@ -8,8 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ApplicationWindow extends Application {
+    BotConfiguration botConfig;
     @Override
     public void start(Stage stage) throws IOException {
+        botConfig = new BotConfiguration();
         FXMLLoader fxmlLoader = new FXMLLoader(ApplicationWindow.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         scene.getStylesheets().add(this.getClass().getResource("css/main.css").toExternalForm());
