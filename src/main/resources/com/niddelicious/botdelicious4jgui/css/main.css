@@ -1,0 +1,17 @@
+.form-container {
+  padding: 20;
+  spacing: 10;
+  -fx-font: 14px "Inter";
+  -fx-padding: 12px;
+}
+
+TextField {
+    -fx-background-color: lightgray;
+    -fx-border-color: black;
+}
+
+Label {
+    -fx-alignment: bottom-left;
+    -fx-font-weight: 700;
+    -fx-padding: 0em 1em 0em 0em;
+}
