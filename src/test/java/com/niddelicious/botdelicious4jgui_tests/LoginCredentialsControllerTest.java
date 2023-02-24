@@ -21,7 +21,10 @@ public class LoginCredentialsControllerTest {
     public void testSaveInputsToConfig(){
         LoginCredentialsController loginCredentialsController = new LoginCredentialsController();
         assertNotEquals("client_id_key", botConfig.get("clientId"));
+        assertNotEquals("client_id_key", botConfig.get("clientSecret"));
         loginCredentialsController.set("clientId", "client_id_key");
+        loginCredentialsController.set("clientSecret", "client_secret_key");
         assertEquals("client_id_key", botConfig.get("clientId"));
+        assertEquals("client_secret_key", botConfig.get("clientSecret"));
     }
 }

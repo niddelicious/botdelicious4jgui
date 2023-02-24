@@ -10,7 +10,11 @@ public class LoginCredentialsController {
     @FXML
     private TextField clientIdField;
     @FXML
+    private TextField clientSecretField;
+    @FXML
     private Label currentClientId;
+    @FXML
+    private Label currentClientSecret;
 
     public LoginCredentialsController(){
         botConfig = new BotConfiguration();
@@ -22,13 +26,26 @@ public class LoginCredentialsController {
 
     @FXML
     protected void onClientIdChanged() {
-        String clientIdFieldValue = clientIdField.getText();
-        this.set("clientId", clientIdFieldValue);
+        //String clientIdFieldValue = clientIdField.getText();
+        this.set("clientId", clientIdField.getText());
         this.updateCurrentClientId();
     }
 
     @FXML
     protected void updateCurrentClientId() {
         currentClientId.setText(botConfig.get("clientId").toString());
+    }
+
+
+    @FXML
+    protected void onClientSecretChanged() {
+        // String clientSecretFieldValue = clientSecretField.getText();
+        this.set("clientSecret", clientSecretField.getText());
+        this.updateCurrentClientSecret();
+    }
+
+    @FXML
+    protected void updateCurrentClientSecret() {
+        currentClientSecret.setText(botConfig.get("clientSecret").toString());
     }
 }

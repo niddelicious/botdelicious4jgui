@@ -21,6 +21,10 @@
     </HBox>
     <HBox>
         <Label text="Client Secret: " />
-        <TextField fx:id="clientSecretField" />
+        <TextField fx:id="clientSecretField" onKeyTyped="#onClientSecretChanged" />
+    </HBox>
+    <HBox>
+        <Label text="Current Client Secret:" />
+        <Label fx:id="currentClientSecret" />
     </HBox>
 </VBox>
