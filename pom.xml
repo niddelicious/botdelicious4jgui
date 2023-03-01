@@ -23,6 +23,7 @@
         <assertj.version><![CDATA[[3.0.0,4.0.0)]]></assertj.version>
         <javafx.version><![CDATA[[19.0.0,20.0.0)]]></javafx.version>
         <hansolo.version><![CDATA[[17.0.0,18.0.0)]]></hansolo.version>
+        <mockito.version><![CDATA[[5.0.0,6.0.0)]]></mockito.version>
     </properties>
 
     <dependencies>
@@ -173,6 +174,24 @@
             <version>${hansolo.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
+
     </dependencies>
 
     <build>

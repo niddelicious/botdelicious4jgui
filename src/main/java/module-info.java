@@ -12,6 +12,7 @@ module com.niddelicious.botdelicious4jgui {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires org.json;
 
     opens com.niddelicious.botdelicious4jgui to javafx.fxml;
     exports com.niddelicious.botdelicious4jgui;
