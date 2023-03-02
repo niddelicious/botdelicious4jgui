@@ -1,4 +1,4 @@
-package com.niddelicious.botdelicious4jgui_tests;
+package com.niddelicious.botdelicious4jgui.tests;
 
 import com.niddelicious.botdelicious4jgui.BotConfiguration;
 import org.junit.Before;
