@@ -1,6 +1,7 @@
 package com.niddelicious.botdelicious4jgui;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -8,13 +9,15 @@ public class LoginCredentialsController {
     BotConfiguration botConfig;
 
     @FXML
+    private Label title;
+    @FXML
     private TextField clientIdField;
     @FXML
     private TextField clientSecretField;
     @FXML
-    private Label currentClientId;
+    private TextField refreshTokenField;
     @FXML
-    private Label currentClientSecret;
+    private Button doLogin;
 
     public LoginCredentialsController(){
         botConfig = new BotConfiguration();
@@ -26,26 +29,17 @@ public class LoginCredentialsController {
 
     @FXML
     protected void onClientIdChanged() {
-        //String clientIdFieldValue = clientIdField.getText();
         this.set("clientId", clientIdField.getText());
-        this.updateCurrentClientId();
     }
-
-    @FXML
-    protected void updateCurrentClientId() {
-        currentClientId.setText(botConfig.get("clientId").toString());
-    }
-
 
     @FXML
     protected void onClientSecretChanged() {
-        // String clientSecretFieldValue = clientSecretField.getText();
         this.set("clientSecret", clientSecretField.getText());
-        this.updateCurrentClientSecret();
     }
 
     @FXML
-    protected void updateCurrentClientSecret() {
-        currentClientSecret.setText(botConfig.get("clientSecret").toString());
+    protected void onRefreshTokenChanged() {
+        this.set("refreshToken", refreshTokenField.getText());
     }
+
 }

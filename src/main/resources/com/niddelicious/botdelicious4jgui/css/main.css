@@ -1,17 +1,84 @@
-.form-container {
-  padding: 20;
-  spacing: 10;
-  -fx-font: 14px "Inter";
-  -fx-padding: 12px;
+@font-face {
+    src: url('../fonts/Inter-Black.ttf');
+}
+@font-face {
+    src: url('../fonts/Inter-Bold.ttf');
+}
+@font-face {
+    src: url('../fonts/Inter-Regular.ttf');
+}
+@font-face {
+    src: url('../fonts/Inter-Medium.ttf');
+}
+@font-face {
+    src: url('../fonts/Inter-Light.ttf');
+}
+@font-face {
+    src: url('../fonts/Inter-Thin.ttf');
+}
+@font-face {
+    src: url('../fonts/Fleftex_M.ttf');
 }
 
-TextField {
-    -fx-background-color: lightgray;
-    -fx-border-color: black;
+* {
+    -fx-default-white: #ECECD4;
+    -fx-default-black: #232323;
+    -fx-font-size: 36px;
+    -fx-base: -fx-default-black;
+    -fx-background: -fx-default-white;
 }
 
-Label {
-    -fx-alignment: bottom-left;
-    -fx-font-weight: 700;
-    -fx-padding: 0em 1em 0em 0em;
+.root {
+    -fx-padding: 10;
+    -fx-background-color: -fx-default-white;
+}
+
+.label {
+    -fx-font-family: 'Inter Medium';
+    -fx-text-fill: -fx-default-black;
+}
+
+.text-field {
+    -fx-font-family: 'Inter Light';
+    -fx-background-color: -fx-default-black;
+    -fx-text-fill: -fx-default-white;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+
+#title, .button {
+    -fx-min-width: 600px;
+    -fx-min-height: 60px;
+}
+.button {
+    -fx-font-family: 'Inter Black';
+    -fx-font-size: 42px;
+    -fx-background-color: -fx-default-black;
+    -fx-alignment: CENTER;
+    -fx-text-fill: -fx-default-white;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+}
+
+.cell {
+    -fx-alignment: CENTER;
+    -fx-pref-width: 80%;
+}
+
+.cell-left {
+    -fx-alignment: RIGHT;
+    -fx-pref-width: 20%;
+}
+
+.row {
+    -fx-pref-height: 60px;
+}
+
+.button-row {
+    -fx-pref-height: 60px;
+}
+
+#title, #doLogin {
+    -fx-alignment: CENTER;
+    -fx-pref-width: 100%;
 }
