@@ -16,9 +16,6 @@
 @font-face {
     src: url('../fonts/Inter-Thin.ttf');
 }
-@font-face {
-    src: url('../fonts/Fleftex_M.ttf');
-}
 
 * {
     -fx-default-white: #ECECD4;
@@ -46,7 +43,7 @@
     -fx-background-radius: 0px;
 }
 
-#title, .button {
+#titleLabel, #loginButton {
     -fx-min-width: 600px;
     -fx-min-height: 60px;
 }
@@ -78,7 +75,7 @@
     -fx-pref-height: 60px;
 }
 
-#title, #doLogin {
+#titleLabel, #loginButton {
     -fx-alignment: CENTER;
     -fx-pref-width: 100%;
 }

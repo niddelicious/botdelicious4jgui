@@ -26,17 +26,17 @@
         <RowConstraints minHeight="42.0" vgrow="SOMETIMES" />
     </rowConstraints>
 
-    <Label fx:id="title" text="Twitch Chat Credentials" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+    <Label fx:id="titleLabel" text="Twitch Chat Credentials" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
 
     <Label text="Client ID: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <TextField fx:id="clientIdField" onKeyTyped="#onClientIdChanged" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <TextField fx:id="clientIdField" onKeyTyped="#onTextFieldChanged" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
     <Label text="Client Secret:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField fx:id="clientSecretField" onKeyTyped="#onClientSecretChanged" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="clientSecretField" onKeyTyped="#onTextFieldChanged" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
     <Label text="Refresh Token: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
-    <TextField fx:id="refreshTokenField" onKeyTyped="#onRefreshTokenChanged" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <TextField fx:id="refreshTokenField" onKeyTyped="#onTextFieldChanged" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Button fx:id="doLogin" text="Log in" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+    <Button fx:id="loginButton" onAction="#onLoginButtonPress" text="Log in" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
 
 </GridPane>
