@@ -155,6 +155,12 @@
             <artifactId>countries</artifactId>
             <version>${hansolo.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.jknack.handlebars</groupId>
+                    <artifactId>handlebars.helpers</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>eu.hansolo.fx</groupId>

@@ -6,8 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
-import java.io.*;
-import java.net.URL;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class LoginCredentialsController {
@@ -36,9 +37,9 @@ public class LoginCredentialsController {
     }
 
     private void loadProperties() {
+        prop = new Properties();
+        InputStream in = getClass().getResourceAsStream("/properties/config.properties");
         try {
-            File file = getPropertiesFile();
-            InputStream in = new FileInputStream(file);
             prop.load(in);
             in.close();
         } catch (IOException e) {
@@ -84,7 +85,7 @@ public class LoginCredentialsController {
     }
 
     private void saveProperties() {
-        try (FileOutputStream out = new FileOutputStream(getPropertiesFile())) {
+        try (FileOutputStream out = new FileOutputStream("src/main/resources/properties/config.properties")) {
             prop.store(out, null);
             titleLabel.setText("Properties saved");
             loginButton.setText("Save again");
@@ -93,25 +94,6 @@ public class LoginCredentialsController {
             titleLabel.setText("Something went wrong, try again");
             loginButton.setText("Log in");
         }
-    }
-    private File getPropertiesFile() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        URL resource = classLoader.getResource("properties/config.properties");
-        File file;
-        if (resource == null) {
-            file = new File("src/main/resources/properties/config.properties");
-            try {
-                boolean fileCreated = file.createNewFile();
-                if (!fileCreated) {
-                    throw new IOException("Unable to create file at specified path.");
-                }
-            } catch (IOException e) {
-                throw new IllegalArgumentException("Properties file could not be created: " + e.getMessage());
-            }
-        } else {
-            file = new File(resource.getFile());
-        }
-        return file;
     }
 
 
