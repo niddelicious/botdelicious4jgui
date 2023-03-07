@@ -189,7 +189,17 @@
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>
             <version>3.0.0-beta-2</version>
-            <scope>test</scope>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.jknack.handlebars</groupId>
+                    <artifactId>handlebars.helpers</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.jknack</groupId>
+                    <artifactId>handlebars</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

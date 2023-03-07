@@ -14,6 +14,7 @@ import java.util.Properties;
 public class LoginCredentialsController {
     BotConfiguration botConfig;
     static Properties prop;
+    private AccessTokenRequest accessTokenRequest;
 
     @FXML
     private Label titleLabel;
@@ -70,13 +71,18 @@ public class LoginCredentialsController {
     }
 
     @FXML
-    protected void onLoginButtonPress() {
+    protected void onLoginButtonPress() throws IOException {
         titleLabel.setText("Attempting to log in...");
         loginButton.setText("Logging in...");
         setProperties();
         saveProperties();
-
-
+        try {
+            doRefreshAccessToken();
+        } catch (IOException e){
+            titleLabel.setText("Failed to get Access Token");
+            System.out.println("Failed to get Access Token");
+            e.printStackTrace();
+        }
     }
     private void setProperties() {
         prop.setProperty("clientId", clientIdField.getText());
@@ -96,5 +102,24 @@ public class LoginCredentialsController {
         }
     }
 
+    private void doRefreshAccessToken() throws IOException {
+        accessTokenRequest = new AccessTokenRequest(
+                prop.getProperty("clientId"),
+                prop.getProperty("clientSecret"),
+                prop.getProperty("refreshToken"),
+                prop.getProperty("refreshUrl")
+        );
+        try {
+            accessTokenRequest.refreshAccessToken();
+            prop.setProperty("accessToken", accessTokenRequest.getAccessToken());
+            saveProperties();
+            titleLabel.setText("Got access token!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            prop.setProperty("accessToken", null);
+        }
+
+
+    }
 
 }
