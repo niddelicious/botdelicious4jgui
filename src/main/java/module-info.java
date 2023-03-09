@@ -13,6 +13,14 @@ module com.niddelicious.botdelicious4jgui {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires org.json;
+    requires twitch4j;
+    requires events4j.handler.simple;
+    requires credentialmanager;
+    requires com.fasterxml.jackson.databind;
+    requires twitch4j.chat;
+    requires twitch4j.common;
+    requires events4j.core;
+
 
     opens com.niddelicious.botdelicious4jgui to javafx.fxml;
     exports com.niddelicious.botdelicious4jgui;

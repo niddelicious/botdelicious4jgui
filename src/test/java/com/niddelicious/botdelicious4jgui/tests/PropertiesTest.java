@@ -1,11 +1,11 @@
 package com.niddelicious.botdelicious4jgui.tests;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
-import org.junit.Before;
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

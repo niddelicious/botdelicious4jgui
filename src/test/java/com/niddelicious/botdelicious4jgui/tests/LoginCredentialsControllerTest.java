@@ -5,8 +5,8 @@ import com.niddelicious.botdelicious4jgui.LoginCredentialsController;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class LoginCredentialsControllerTest {
 
